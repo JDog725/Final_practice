@@ -1,4 +1,4 @@
-//9.cpp(10 pts)
+//9.cpp(15 pts)
 #include <iostream>
 #include <string>
 
@@ -24,4 +24,19 @@ This function returns true if the string is a palindrome,
 otherwise false. A palindrome is a word or phrase that reads
 the same backward as forward (e.g. madam, nurses run, etc.).
 Note: string can have spaces for example, "taco cat".**/
-
+bool isPalindrome(string phrase)
+{
+    int size = phrase.length();
+    for(int i = 0; i < (size/2); i++)
+    {
+        if(phrase[i] == ' ' || phrase[size-(i+1)] == ' ')
+        {
+            continue;
+        }
+        if(phrase[i] != phrase[size-(i+1)])
+        {
+            return false;
+        }
+    }
+    return true;
+}
